@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Manager_Employee.Core.Manager>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+<h3>Welcome to the Company Portal!</h3>
+        <p>Please select either Managers or Employees</p>
+        @Html.ActionLink("Managers","Index","Manager",null, new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("Employees", "Index", "Employee", null, new { @class = "btn btn-primary btn-lg" })
+</div>

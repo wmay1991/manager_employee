@@ -1,0 +1,32 @@
+﻿@using Manager_Employees.Models
+@model ManagerViewModel
+@{
+    ViewBag.Title = "Edit Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Manager</h2>
+
+@using (Html.BeginForm("EditManager", "Manager", FormMethod.Post))
+{
+<ul>
+@Html.HiddenFor(m => m.mgr_id)
+        <li>
+            @Html.LabelFor(m => m.first_name)
+            @Html.EditorFor(m => m.first_name)
+            @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+        </li>
+        <li>
+            @Html.LabelFor(m => m.last_name)
+            @Html.EditorFor(m => m.last_name)
+            @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+        </li>
+
+</ul>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}
+

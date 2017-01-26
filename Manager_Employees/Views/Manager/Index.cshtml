@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Manager_Employee.Core.Manager>
+@{
+    ViewBag.Title = "Manager List";
+}
+
+<div class="row">
+        <h3>Managers</h3>
+        <ul>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+                if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            @Html.ActionLink("View Details", "Details", "Manager", new { mgr_id = item.mgr_id }, new { @class = "btn btn-default btn-sm" })
+                            @Html.ActionLink("Remove", "DeleteManager", new { itemId = item.mgr_id }, new { @class = "btn btn-default btn-sm" })
+                            @Html.ActionLink("Edit", "EditManager", "Manager", new { itemId = item.mgr_id }, new { @class = "btn btn-default btn-sm" })
+                            @Html.DisplayFor(i => item.first_name)
+                            @Html.DisplayFor(i => item.last_name)
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        @Html.ActionLink("Add Manager", "AddManager", "Manager", new { @class = "btn btn-default" })
+</div>

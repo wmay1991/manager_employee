@@ -1,0 +1,50 @@
+﻿@using Manager_Employees.Models
+@model EmployeeViewModel
+@{
+    ViewBag.Title = "Add Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Add Employee</h4>
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post))
+{
+    <ul>
+        @Html.HiddenFor(e => e.mgr_id)
+        @Html.HiddenFor(e => e.emp_id)
+        <li>
+            @Html.Label("Manager")
+            @Html.DisplayFor(e => e.mgr.first_name)
+            @Html.DisplayFor(e => e.mgr.last_name)
+        </li>
+        <li>
+            @Html.LabelFor(e => e.first_name)
+            @Html.TextBoxFor(e => e.first_name)
+            @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+        </li>
+        <li>
+            @Html.LabelFor(e => e.last_name)
+            @Html.TextBoxFor(e => e.last_name)
+            @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+        </li>
+        <li>
+            @Html.LabelFor(e => e.dept)
+            @Html.DropDownListFor(e => e.dept, Model.Departments)
+            @Html.ValidationMessageFor(model => model.dept, "", new { @class = "text-danger" })
+        </li>
+        <li>
+            @Html.LabelFor(e => e.title)
+            @Html.TextBoxFor(e => e.title)
+        </li>
+        <li>
+            @Html.LabelFor(e => e.start_date)
+            @Html.TextBoxFor(e => e.start_date, new { Value = DateTime.Today.ToShortDateString() })
+            @Html.ValidationMessageFor(model => model.start_date, "", new { @class = "text-danger" })
+        </li>
+    </ul>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+</div>
+}

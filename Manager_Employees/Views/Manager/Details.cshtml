@@ -1,0 +1,36 @@
+﻿@using Manager_Employees.Models
+@model ManagerViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h4>Manager Details</h4>
+@Html.HiddenFor(m => m.mgr_id)
+    <ul>
+        <li>
+            @Html.LabelFor(e => e.first_name)
+            @Html.DisplayFor(m => m.first_name)
+        </li>
+        <li>
+            @Html.LabelFor(e => e.last_name)
+            @Html.DisplayFor(m => m.last_name)
+            </li>
+</ul>
+</div>
+<h5>Employees</h5>
+<ul>
+    @foreach (var item in Model.employee)
+
+    {
+        <li>
+        @Html.ActionLink("Edit Employee", "EditEmployee", "Employee", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
+        @Html.ActionLink("View Details", "Details", "Employee", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
+        @Html.ActionLink("Remove Employee", "RemoveEmployee", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
+        @item.first_name
+        @item.last_name
+        </li>
+    }
+
+</ul>
+@Html.ActionLink("Add Employee","AddEmployee","Employee", new { mgr_id = Model.mgr_id}, new { @class = "btn btn-default" })

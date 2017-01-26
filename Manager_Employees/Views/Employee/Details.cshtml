@@ -1,0 +1,44 @@
+﻿@using Manager_Employees.Models
+@model EmployeeViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee Details</h2>
+<div>
+<ul>
+
+        @Html.HiddenFor(e => e.emp_id)
+    <li>
+        @Html.LabelFor(e => e.first_name)
+        @Html.DisplayFor(e => e.first_name)
+        </li>
+        <li>
+        @Html.LabelFor(e => e.last_name)
+        @Html.DisplayFor(e => e.last_name)
+        </li>
+    <li>
+        @Html.LabelFor(e => e.dept)
+        @Html.DisplayFor(e => e.dept)
+    </li>
+    <li>
+        @Html.LabelFor(e => e.title)
+        @Html.DisplayFor(e => e.title)
+    </li>
+    <li>
+        @Html.LabelFor(e => e.start_date)
+        @Model.start_date.ToShortDateString()
+    </li>
+        <li>
+        @Html.Label("Manager Name")
+        @Html.DisplayFor(e => e.mgr.first_name)
+        @Html.DisplayFor(e => e.mgr.last_name)
+         </li>
+    <li>
+    </li>
+    <li>
+        @Html.ActionLink("Edit", "EditEmployee", new { emp_id = Model.emp_id }, new { @class = "btn btn-default btn-sm" })
+    </li>
+    </ul>
+</div>

@@ -1,0 +1,53 @@
+﻿@using Manager_Employees.Models
+@model EmployeeViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(e => e.emp_id)
+        @Html.HiddenFor(e => e.start_date)
+        <ul>
+            <li>
+                @Html.LabelFor(e => e.first_name)
+                @Html.EditorFor(e => e.first_name)
+                @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+            </li>
+            <li>
+                @Html.LabelFor(e => e.last_name)
+                @Html.EditorFor(e => e.last_name)
+                @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+            </li>
+            <li>
+                @Html.LabelFor(e => e.dept)
+                @Html.DropDownListFor(e => e.dept, Model.Departments)
+                @Html.ValidationMessageFor(model => model.dept, "", new { @class = "text-danger" })
+            </li>
+            <li>
+                @Html.LabelFor(e => e.title)
+                @Html.EditorFor(e => e.title)
+            </li>
+            <li>
+                @Html.LabelFor(e => e.start_date)
+                @Model.start_date.ToShortDateString()
+            </li>
+            <li>
+                @Html.Label("Manager")
+                @Html.DropDownListFor(e => e.mgr_id, ViewBag.mgr_list_id as SelectList)
+            </li>
+            <li>
+</li>
+        </ul>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+        </div>
+        }
+
