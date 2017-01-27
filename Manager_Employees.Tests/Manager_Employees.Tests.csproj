@@ -132,9 +132,9 @@
       <Project>{95D4FD75-D01E-4967-95E7-4249F0270377}</Project>
       <Name>Manager_Employee.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Manager_Employees\Manager_Employees.csproj">
+    <ProjectReference Include="..\Manager_Employees\Manager_Employees.Web.csproj">
       <Project>{C640C7C6-7B11-4D79-88F1-F2DCED9E1E7B}</Project>
-      <Name>Manager_Employees</Name>
+      <Name>Manager_Employees.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

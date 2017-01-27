@@ -52,7 +52,7 @@ namespace Manager_Employees.Controllers
                 last_name = null,
                 mgr_id = mgr.mgr_id,
                 mgr = mgr,
-                start_date = DateTime.Today.Date
+                start_date = DateTime.Today
             };
 
             var vm = new EmployeeViewModel(emp);
