@@ -38,3 +38,9 @@ ul li {
 .navbar {
     height: 60px;
 }
+
+/* Style nav header*/
+.navbar > .container .navbar-brand {
+ padding-top:25px;
+ font-size: 24px;
+}

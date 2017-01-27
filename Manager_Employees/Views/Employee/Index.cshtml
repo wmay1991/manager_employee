@@ -18,8 +18,9 @@
                     foreach (var item in Model)
                     {
                         <li>
+                            @Html.HiddenFor(i => item.emp_id)
                             @Html.ActionLink("View Details", "Details", "Employee", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
-                            @Html.ActionLink("Remove", "DeleteEmployee", new { itemId = item.mgr_id }, new { @class = "btn btn-default btn-sm" })
+                            @Html.ActionLink("Remove", "RemoveEmployee", "Manager", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
                             @Html.ActionLink("Edit", "EditEmployee", "Employee", new { emp_id = item.emp_id }, new { @class = "btn btn-default btn-sm" })
                             @Html.DisplayFor(i => item.first_name)
                             @Html.DisplayFor(i => item.last_name)

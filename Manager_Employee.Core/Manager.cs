@@ -19,7 +19,7 @@ namespace Manager_Employee.Core
         public string first_name { get; set; }
         public string last_name { get; set; }
 
-        // Would like to add, modify
+        // Would like to add, modify, and sort
         public IList<Employee> employee { get; set; }
 
     }

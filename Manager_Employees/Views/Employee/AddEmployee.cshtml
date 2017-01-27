@@ -8,6 +8,7 @@
 <h4>Add Employee</h4>
 @using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <ul>
         @Html.HiddenFor(e => e.mgr_id)
         @Html.HiddenFor(e => e.emp_id)

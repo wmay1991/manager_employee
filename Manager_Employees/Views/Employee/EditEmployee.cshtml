@@ -8,6 +8,7 @@
 <h2>Edit</h2>
 @using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-horizontal">
         @Html.HiddenFor(e => e.emp_id)
         @Html.HiddenFor(e => e.start_date)
@@ -39,8 +40,6 @@
                 @Html.Label("Manager")
                 @Html.DropDownListFor(e => e.mgr_id, ViewBag.mgr_list_id as SelectList)
             </li>
-            <li>
-</li>
         </ul>
 
         <div class="form-group">

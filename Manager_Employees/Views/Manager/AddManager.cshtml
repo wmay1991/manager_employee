@@ -9,6 +9,7 @@
 <h2>Add Manager</h2>
 @using (Html.BeginForm("AddManager", "Manager", FormMethod.Post, new { @class = "form-horizontal" }))
 {
+    @Html.AntiForgeryToken()
     <ul>
     @Html.HiddenFor(m => m.mgr_id)
         <li>

@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm("EditManager", "Manager", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
 <ul>
 @Html.HiddenFor(m => m.mgr_id)
         <li>
