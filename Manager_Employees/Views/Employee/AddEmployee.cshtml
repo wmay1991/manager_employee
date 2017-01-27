@@ -37,7 +37,7 @@
         </li>
         <li>
             @Html.LabelFor(e => e.start_date)
-            @Html.TextBoxFor(e => e.start_date, new { Value = DateTime.Today.ToShortDateString() })
+            @Html.TextBoxFor(e => e.start_date,"{0:MM/dd/yyyy}")
             @Html.ValidationMessageFor(model => model.start_date, "", new { @class = "text-danger" })
         </li>
     </ul>

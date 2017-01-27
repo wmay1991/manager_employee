@@ -62,9 +62,10 @@ namespace Manager_Employees.Models
         [DisplayName("Title")]
         public string title { get; set; }
 
-        [Required(ErrorMessage = "Please select a start date")]
+        [Required(ErrorMessage = "Please enter a start date")]
+        [DataType(DataType.Date)]
         [DisplayName("Start Date")]
-        public DateTime start_date { get; set; }
+        public DateTime? start_date { get; set; }
 
         // added to viewmodel to enable resuse and scability (easy to add an addtional value)
         // could possibly replace with the db table in the future but leaving static values for now

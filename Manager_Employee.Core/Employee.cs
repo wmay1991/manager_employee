@@ -19,7 +19,7 @@ namespace Manager_Employee.Core
 
         public string title { get; set; }
 
-        public DateTime start_date { get; set; }
+        public DateTime? start_date { get; set; }
         public Guid  mgr_id { get; set; }
 
         public virtual Manager mgr { get; set; }

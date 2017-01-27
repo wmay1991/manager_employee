@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201701262027023_Add_Title.Designer.cs">
       <DependentUpon>201701262027023_Add_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701271427357_Update_Start_Date.cs" />
+    <Compile Include="Migrations\201701271427357_Update_Start_Date.Designer.cs">
+      <DependentUpon>201701271427357_Update_Start_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701262027023_Add_Title.resx">
       <DependentUpon>201701262027023_Add_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701271427357_Update_Start_Date.resx">
+      <DependentUpon>201701271427357_Update_Start_Date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

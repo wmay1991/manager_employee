@@ -145,7 +145,7 @@ namespace Manager_Employees.Controllers
             _db.Employee.Remove(emp);
             _db.Entry(emp).State = EntityState.Deleted;
             _db.SaveChanges();
-            return RedirectToAction("Index",new { mgr_id = emp.mgr_id });
+            return RedirectToAction("Details",new { mgr_id = emp.mgr_id });
         }
 
     }

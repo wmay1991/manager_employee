@@ -43,7 +43,7 @@ namespace Manager_Employees.Controllers
             {
                 return HttpNotFound();
             }
-            
+
             // access this through manager page
             var emp = new Employee
             {
@@ -51,7 +51,8 @@ namespace Manager_Employees.Controllers
                 first_name = null,
                 last_name = null,
                 mgr_id = mgr.mgr_id,
-                mgr = mgr
+                mgr = mgr,
+                start_date = DateTime.Today.Date
             };
 
             var vm = new EmployeeViewModel(emp);
@@ -70,11 +71,11 @@ namespace Manager_Employees.Controllers
                 _db.SaveChanges();
 
                 // Send back to the employees manager page
-                return RedirectToAction("Index", "Manager", new { mgr_id = vm.mgr_id });
+                return RedirectToAction("Details", "Manager", new { mgr_id = vm.mgr_id });
             }
             else
             {
-                return View();
+                return View(vm);
             }
         }
 
